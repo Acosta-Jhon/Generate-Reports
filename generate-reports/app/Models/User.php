@@ -40,4 +40,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function rol(){
+        return $this->belongsTo(Rol::Class);
+    }
+
+    public function answer(){
+        return $this->belongsTo(Answer::Class);
+    }
 }
