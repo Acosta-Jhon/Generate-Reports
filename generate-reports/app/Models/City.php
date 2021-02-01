@@ -10,6 +10,6 @@ class City extends Model
     use HasFactory;
 
     public function answers(){
-        return $this->hasMany(Answer::Class);
+        return $this->hasMany(Answer::class);
     }
 }

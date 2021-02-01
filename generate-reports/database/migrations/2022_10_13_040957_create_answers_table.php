@@ -26,21 +26,21 @@ class CreateAnswersTable extends Migration
             $table->unsignedBigInteger('ciudades_id');
             $table->unsignedBigInteger('direccion_id');
             $table->timestamps();
-             /* relacion a la tabla usurio */
-             $table->foreign('usuario_id')->references('id')
-             ->on('users')->onUpdate('cascade')->onDelete('cascade');
+            /* relacion a la tabla usurio */
+            $table->foreign('usuario_id')->references('id')
+                ->on('users')->onUpdate('cascade')->onDelete('cascade');
             /* relacion a la tabla preguntas */
             $table->foreign('preguntas_id')->references('id')
-            ->on('questions')->onUpdate('cascade')->onDelete('cascade');
+                ->on('questions')->onUpdate('cascade')->onDelete('cascade');
             /* /* relacion a la tabla trabajos */
             $table->foreign('trabajos_id')->references('id')
-            ->on('jobs')->onUpdate('cascade')->onDelete('cascade');
+                ->on('jobs')->onUpdate('cascade')->onDelete('cascade');
             /* relacion a la tabla ciudades */
             $table->foreign('ciudades_id')->references('id')
-            ->on('cities')->onUpdate('cascade')->onDelete('cascade');
+                ->on('cities')->onUpdate('cascade')->onDelete('cascade');
             /* relacion a la tabla dirección */
             $table->foreign('direccion_id')->references('id')
-            ->on('adresses')->onUpdate('cascade')->onDelete('cascade');
+                ->on('adresses')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -54,3 +54,11 @@ class CreateAnswersTable extends Migration
         Schema::dropIfExists('answers');
     }
 }
+/**
+ *Trabajaremos con 10 roles
+ *tendremos 50 usuarios
+ *haremos 100 preguntas
+ *tendremos 20 trabajos
+ *estaremos en 15 ciudades
+ *tendremos 100 direcciones
+ */

@@ -42,10 +42,10 @@ class User extends Authenticatable
     ];
 
     public function rol(){
-        return $this->belongsTo(Rol::Class);
+        return $this->belongsTo(Role::class);
     }
 
     public function answer(){
-        return $this->belongsTo(Answer::Class);
+        return $this->belongsTo(Answer::class);
     }
 }

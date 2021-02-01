@@ -22,7 +22,8 @@ class QuestionFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'pre_descripcion' => $this->faker->text(100),
+            'pre_numero' => random_int(1, 50)
         ];
     }
 }

@@ -22,7 +22,8 @@ class AdressFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'direc_calle_principal' => $this->faker->streetAddress,
+            'direc_calle_secundaria' => $this->faker->streetAddress
         ];
     }
 }

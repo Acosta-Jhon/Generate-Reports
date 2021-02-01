@@ -10,21 +10,21 @@ class Answer extends Model
     use HasFactory;
 
     public function users(){
-        return $this->hasMany(User::Class);
+        return $this->hasMany(User::class);
     }
 
     public function question(){
-        return $this->belongsTo(Question::Class);
+        return $this->belongsTo(Question::class);
     }
 
     public function job(){
-        return $this->belongsTo(Job::Class);
+        return $this->belongsTo(Job::class);
     }
 
     public function city(){
-        return $this->belongsTo(City::Class);
+        return $this->belongsTo(City::class);
     }
     public function adress(){
-        return $this->belongsTo(Adress::Class);
+        return $this->belongsTo(Adress::class);
     }
 }

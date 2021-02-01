@@ -17,7 +17,6 @@ class CreateRolesTable extends Migration
             $table->id();
             $table->string('rol_descripcion');
             $table->timestamps();
-            /* Relación */
         });
     }
 

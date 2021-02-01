@@ -3,17 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
-
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::apiResource('/roles', App\Http\Controllers\RoleController::class);
+Route::apiResource('/questions', App\Http\Controllers\QuestionController::class);
+Route::apiResource('/jobs', App\Http\Controllers\JobController::class);
+Route::apiResource('/cities', App\Http\Controllers\CityController::class);
+Route::apiResource('/answers', App\Http\Controllers\AnswerController::class);
+Route::apiResource('/adresses', App\Http\Controllers\AdressController::class);

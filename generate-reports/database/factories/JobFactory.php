@@ -22,7 +22,7 @@ class JobFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'tra_descripcion' => $this->faker->text(100)
         ];
     }
 }

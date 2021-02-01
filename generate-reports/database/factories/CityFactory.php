@@ -22,7 +22,7 @@ class CityFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'ciu_descripcion' => $this->faker->city
         ];
     }
 }
