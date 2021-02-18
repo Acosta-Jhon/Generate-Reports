@@ -1,4 +1,12 @@
 <div class="bg-red-50 p-5 rounded shadow-2xl">
-    <h1 class="text-center font-medium uppercase">Componente visible</h1>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/AngularJS_logo.svg/1280px-AngularJS_logo.svg.png" alt="Not Found">
+    <h1 class="font-semibold text-2xl text-center">Frameworks</h1>
+    <div class="flex items-center justify-center">
+        <div class="w-1/4" *ngFor="let frame of arr">
+            <h1 class="text-center font-medium uppercase">{{frame.framework}}</h1>
+            <div class="flex items-center justify-center">
+                <img src="{{frame.img}}" alt="Not Found" class="w-32 h-32">
+            </div>
+            
+        </div>
+    </div>
 </div>

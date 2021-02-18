@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  DinamicComponentComponent } from '../dinamic-component/dinamic-component.component';
+import { DinamicComponentComponent } from '../dinamic-component/dinamic-component.component';
 
 @Component({
   selector: 'app-ng-component-outlet',
@@ -11,20 +11,17 @@ export class NgComponentOutletComponent implements OnInit {
   component = DinamicComponentComponent
   currentComponent: any
   showHide = false
-  textButton = "Mostrar Component"
-
-  ngOnInit(): void {
-  }
+  textButton = "Mostrar Componente"
 
   showHideComponent(): void {
-      
- if(!this.showHide){
-   //this.textButton = 'Ocultar Componente'
-  this.currentComponent = this.component
-  
- }
-      
 
+    if (!this.showHide) {
+
+        this.currentComponent = this.component
+    }
+  }
+
+  ngOnInit(): void {
   }
 
 }
