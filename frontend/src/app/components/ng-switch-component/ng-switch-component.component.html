@@ -1,0 +1,27 @@
+<hr>
+<div class="text-center border-2 border-black ">
+    <br />
+    <h1 class="font-bold">Ejemplo con ngSwitch</h1>
+    <p>Se mostraran en pantalla el nombre , la edad y el pais de las personas dependiendo su piso </p>
+    <p>Cada piso es un color
+        <span class="text-yellow-400">amarillo = piso 1 </span> ;
+        <span class="text-green-400"> verde = piso 2 </span>;
+        <span class="text-blue-400"> azul = piso 3 </span>;
+        <span class="text-purple-400"> violeta = piso 4 </span>
+    </p>
+    <p>las personas que no estan en un piso se pintan con gris.</p>
+    <br />
+    <ul *ngFor="let persona of Edificio" [ngSwitch]="persona.piso">
+
+        <li *ngSwitchCase="1" class="bg-yellow-400">{{ persona.nombre }} | {{persona.edad}} | {{ persona.pais }}
+        </li>
+        <li *ngSwitchCase="2" class="bg-green-400">{{ persona.nombre }} | {{persona.edad}} | {{ persona.pais }}
+        </li>
+        <li *ngSwitchCase="3" class="bg-blue-400">{{ persona.nombre }} | {{persona.edad}} | {{ persona.pais }}
+        </li>
+        <li *ngSwitchCase="4" class="bg-purple-400">{{ persona.nombre }} | {{persona.edad}} | {{ persona.pais }}
+        </li>
+        <li *ngSwitchDefault class="bg-gray-400">{{ persona.nombre }} | {{persona.edad}} | {{ persona.pais }}
+        </li>
+    </ul>
+</div>
