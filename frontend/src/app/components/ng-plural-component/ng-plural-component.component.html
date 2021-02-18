@@ -1,0 +1,35 @@
+<div class="text-center border-2 border-black mt-8 ">
+    <h1 class="py-2 font-bold">A continuación se muestran los casos con diferentes valoes de ngPlural</h1>
+    <div class="bg-blue-300">
+        <plural-component [ngPlural]="-1">
+            <ng-template ngPluralCase="=-1">[ngPlural]="-1"</ng-template>
+            <ng-template ngPluralCase="=0">[ngPlural]="0"</ng-template>
+            <ng-template ngPluralCase="=1">[ngPlural]="1"</ng-template>
+            <ng-template ngPluralCase="other">[ngPlural]="other" donde "other" es cualquier valor numerico no especificado</ng-template>
+        </plural-component>
+    </div>
+    <div class="bg-blue-400">
+        <plural-component [ngPlural]="0">
+            <ng-template ngPluralCase="=-1">[ngPlural]="-1"</ng-template>
+            <ng-template ngPluralCase="=0">[ngPlural]="0"</ng-template>
+            <ng-template ngPluralCase="=1">[ngPlural]="1"</ng-template>
+            <ng-template ngPluralCase="other">[ngPlural]="other" donde "other" es cualquier valor numerico no especificado</ng-template>
+        </plural-component>
+    </div>
+    <div class="bg-blue-500">
+        <plural-component [ngPlural]="1">
+            <ng-template ngPluralCase="=-1">[ngPlural]="-1"</ng-template>
+            <ng-template ngPluralCase="=0">[ngPlural]="0"</ng-template>
+            <ng-template ngPluralCase="=1">[ngPlural]="1"</ng-template>
+            <ng-template ngPluralCase="other">[ngPlural]="other" donde "other" es cualquier valor numerico no especificado</ng-template>
+        </plural-component>
+    </div>
+    <div class="bg-blue-600">
+        <plural-component [ngPlural]="2">
+            <ng-template ngPluralCase="=-1">[ngPlural]="-1"</ng-template>
+            <ng-template ngPluralCase="=0">[ngPlural]="0"</ng-template>
+            <ng-template ngPluralCase="=1">[ngPlural]="1"</ng-template>
+            <ng-template ngPluralCase="other">[ngPlural]="other" donde "other" es cualquier valor numerico no especificado</ng-template>
+        </plural-component>
+    </div>
+</div>
