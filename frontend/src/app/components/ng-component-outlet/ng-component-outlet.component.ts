@@ -16,7 +16,6 @@ export class NgComponentOutletComponent implements OnInit {
   showHideComponent(): void {
 
     if (!this.showHide) {
-      this.textButton = 'Ocultar Componente'
 
         this.currentComponent = this.component
     }
