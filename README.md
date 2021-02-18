@@ -4,7 +4,11 @@ https://docs.google.com/presentation/d/177HBB81kPlI2z4AFJnyiETJplb8KXJXZSgeirJ2G
 
 Integrantes:
 Jhon Acosta
+<br>
 Andy de la Cruz
+<br>
 Javier Pastaz
+<br>
 Jefferson Ruiz
+<br>
 Daniela Sanchez
