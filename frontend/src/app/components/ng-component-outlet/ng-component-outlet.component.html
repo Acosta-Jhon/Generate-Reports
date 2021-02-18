@@ -1,13 +1,13 @@
 <div>
     <div class="flex w-full">
-        <div class="w-1/2">
-            <h1 class="font-semibold text-lg "> > Divertiva ngComponentOutlet</h1>
-            <h1 class="font-sans text-base ">Permite crear componetes dinàmicos</h1>
+        <div class="w-1/4 h-64">
+            <h1 class="font-semibold text-lg "> > ngComponentOutlet</h1>
+            <h1 class="font-sans text-base py-2">Permite crear componentes dinàmicos</h1>
             <button type='button' (click)='showHideComponent()' class="p-2 bg-red-600 text-gray-200">
                 {{textButton}}
             </button>
         </div>
-        <div class="w-1/2">
+        <div class="w-3/4">
             <ng-container *ngComponentOutlet="currentComponent"></ng-container>
         </div>
 
