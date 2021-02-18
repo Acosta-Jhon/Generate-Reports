@@ -1,0 +1,60 @@
+<h6 class="container bg-dark text-white text-center my-5 py-5">Directiva [ngClass]</h6>
+<p>
+  Al dar click en los botones desaparece cada uno de los textos
+</p>
+<div class="container">
+
+  <button class="btn btn-dark mb-3" (click)="activo='primero'">Primer texto</button>
+  <br>
+  <button class="btn btn-danger mb-3" (click)="activo='segundo'">Segundo texto</button>
+
+
+  <p class="text-info d-block" [ngClass]="{'d-none':activo=='primero'}">
+
+    <img src="../../assets/img/descarga.jpg" ng-fallimg>
+<br>
+    Angular separa completamente el frontend y el backend en la aplicación, e
+    <br>
+    vita escribir código repetitivo y mantiene todo más ordenado gracias a su patrón MVC 
+    <br>
+    (Modelo-Vista-Controlador) asegurando los desarrollos con rapidez, a la vez que 
+    <br>
+    posibilita modificaciones y actualizaciones.
+    <br>
+    En una web SPA aunque la velocidad de carga puede resultar un poco lenta la primera 
+    <br>
+    vez que se abre, navegar después es totalmente instantáneo, ya que se ha cargado toda 
+    <br>
+    la página de golpe.
+    <br>
+    Solamente es una ruta la que se tiene que enviar el servidor, y Angular lo que hace
+    <br>
+     ‘por debajo’ es cambiar la vista al navegar para que dé la apariencia de una web 
+     <br>
+     normal, pero de forma más dinámica.
+    <br>
+    Entre otras ventajas, este framework es modular y escalable adaptándose a nuestras 
+    <br>
+    necesidades y al estar basado en el estándar de componentes web, y con un conjunto 
+    <br>
+    de interfaz de programación de aplicaciones (API) permite crear nuevas etiquetas HTML
+    <br>
+     personalizadas que pueden reutilizarse.
+  </p>
+  <br>
+  <p class="text-primary d-block" [ngClass]="{'d-none':activo=='segundo'}">
+
+    <img src="../../assets/img/2.jpg" ng-fallimg>
+    <br>
+    La directiva ng-class permite de una forma sencilla añadir y quitar clases CSS a un tag.
+    <br>
+    La forma de hacerlo es mediante un objeto JavaScript que esté en el $scope.
+    <br>
+    En dicho objeto , el nombre de cada propiedad será el nombre de una clase CSS.
+    <br>
+    Si el valor de dicha propiedad es true se añadirá la clase
+    <br>
+    CSS al tag y si está a false se quitará su clase CSS del tag.
+  </p>
+
+</div>
