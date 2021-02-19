@@ -7,6 +7,11 @@ import { DinamicComponentComponent } from './components/dinamic-component/dinami
 import { NgMostradorComponent } from './components/ng-mostrador/ng-mostrador.component';
 import { NgSwitchComponentComponent } from './components/ng-switch-component/ng-switch-component.component';
 import { NgPluralComponentComponent } from './components/ng-plural-component/ng-plural-component.component';
+import { NgClassComponent } from './components/ng-class/ng-class.component';
+
+
+
+
 
 
 @NgModule({
@@ -17,6 +22,7 @@ import { NgPluralComponentComponent } from './components/ng-plural-component/ng-
     NgMostradorComponent,
     NgSwitchComponentComponent,
     NgPluralComponentComponent,
+    NgClassComponent
   ],
   imports: [
     BrowserModule
