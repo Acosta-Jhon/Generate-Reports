@@ -1,0 +1,63 @@
+<div class="w-full h-full">
+  <div>
+    <h1 class="font-semibold text-center text-2xl mb-3">Listado de Usuarios</h1>
+  </div>
+  <div class="flex items-center justify-start">
+    <button class="m-2 p-2 bg-indigo-400 rounded text-white hover:bg-white hover:text-indigo-500 border-2 border-indigo-400">
+      Agregar
+    </button>
+  </div>
+  <div>
+    <table class="border-collapse w-full">
+      <thead>
+        <tr>
+          <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+            Nombre Apellido
+          </th>
+          <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+            Apodo
+          </th>
+          <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+            Edad
+          </th>
+          <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+            Email
+          </th>
+          <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+            Acciones
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0"
+          *ngFor="let user of users"
+          >
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static"
+            
+            >
+            {{user.name || user.lastname}}
+          </td>
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+            {{user.nickname}}
+          </td>
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 border border-b text-center block lg:table-cell relative lg:static">
+            {{user.age}}
+          </td>
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 border border-b text-center block lg:table-cell relative lg:static">
+            {{user.email}}
+          </td>
+          <td
+            class="w-full lg:w-auto p-3 text-gray-800 border border-b text-center block lg:table-cell relative lg:static">
+            <i class="far fa-edit fa-lg px-2 cursor-pointer text-yellow-500"></i>
+            <i class="far fa-trash-alt fa-lg cursor-pointer text-red-600"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
