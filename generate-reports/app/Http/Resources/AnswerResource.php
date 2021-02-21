@@ -12,7 +12,7 @@ class AnswerResource extends JsonResource
             'id' => $this->id,
             'res_fecha' => $this->res_fecha,
             'res_observacion' => $this->res_observacion,
-            'res_observacino_general' => $this->res_observacino_general
+            'res_observacion_general' => $this->res_observacion_general
         ];
     }
 }

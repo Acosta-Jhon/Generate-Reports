@@ -20,7 +20,7 @@ class QuestionController extends Controller
     {
         $question = new Question();
         $question->pre_descripcion = $request->pre_descripcion;
-        $question->ppre_numero = $request->pre_numero;
+        $question->pre_numero = $request->pre_numero;
 
         if ($question->save()) {
             return new QuestionResource($question);
@@ -48,7 +48,7 @@ class QuestionController extends Controller
     {
         $question = Question::findOrFail($id);
 
-        if ($question->id()) {
+        if ($question->delete()) {
             return new QuestionResource($question);
         }
     }

@@ -17,7 +17,8 @@ class UserResource extends JsonResource
             'usu_contrasena' => $this->usu_contrasena,
             'usu_genero' => $this->usu_genero,
             'usu_direccion' => $this->usu_direccion,
-            'usu_telefono' => $this->usu_telefono
+            'usu_telefono' => $this->usu_telefono,
+            'rol_id' => $this->rol_id,
         ];
     }
 }

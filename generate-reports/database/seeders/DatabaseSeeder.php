@@ -14,11 +14,11 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         \App\Models\Role::factory(10)->create();
-        \App\Models\User::factory(50)->create();
-        \App\Models\Question::factory(100)->create();
-        \App\Models\Job::factory(20)->create();
-        \App\Models\City::factory(15)->create();
-        \App\Models\Adress::factory(100)->create();
-        \App\Models\Answer::factory(100)->create();
+        \App\Models\User::factory(5)->create();
+        \App\Models\Question::factory(5)->create();
+        \App\Models\Job::factory(5)->create();
+        \App\Models\City::factory(5)->create();
+        \App\Models\Adress::factory(5)->create();
+        \App\Models\Answer::factory(5)->create();
     }
 }
