@@ -33,7 +33,7 @@ class UserFactory extends Factory
             'usu_genero' => $genero,
             'usu_direccion' => $this->faker->address,
             'usu_telefono' => $this->faker->phoneNumber,
-            'rol_id' => rand(1, 10),
+            'rol_id' => rand(1, 2),
             'remember_token' => Str::random(10)
         ];
     }
