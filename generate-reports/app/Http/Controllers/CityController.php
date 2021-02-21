@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\CityResource;
 use App\Models\City;
 use Illuminate\Http\Request;
 
@@ -11,26 +12,42 @@ class CityController extends Controller
 
     public function index()
     {
-        return City::all();
+        $city = City::paginate(10);
+        return CityResource::collection($city);
     }
 
     public function store(Request $request)
     {
-        $city = City::create($request->all());
+        $city = new City;
+        $city->ciu_descripcion = $request->ciu_descripcion;
 
-        return response()->json($city, 201);
+        if ($city->save()) {
+            return new CityResource($city);
+        }
     }
 
-    public function show(City $city)
+    public function show($id)
     {
-        return $city;
+        $city = City::findOrFail($id);
+        return new CityResource($city);
     }
 
-    public function destroy(City $city)
+    public function update(Request $request, $id)
     {
-        $city->delete();
-        return response()->json([
-            'message' => 'Succes'
-        ]);
+        $city = City::findOrFail($id);
+        $city->ciu_descripcion = $request->ciu_descripcion;
+
+        if ($city->save()) {
+            return new CityResource($city);
+        }
+    }
+
+    public function destroy($id)
+    {
+        $city = City::findOrFail($id);
+
+        if ($city->delete()) {
+            return new CityResource($city);
+        }
     }
 }

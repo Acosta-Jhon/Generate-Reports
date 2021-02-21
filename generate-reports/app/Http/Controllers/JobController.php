@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\JobResource;
 use App\Models\Job;
 use Illuminate\Http\Request;
 
@@ -11,26 +12,42 @@ class JobController extends Controller
 
     public function index()
     {
-        return Job::latest()->paginate();
+        $job = Job::paginate(10);
+        return JobResource::collection($job);
     }
 
     public function store(Request $request)
     {
-        $job = Job::create($request->all());
+        $job = new Job();
+        $job->tra_descripcion = $request->tra_descripcion;
 
-        return response()->json($job, 201);
+        if ($job->save()) {
+            return new JobResource($job);
+        }
     }
 
-    public function show(Job $job)
+    public function show($id)
     {
-        return $job;
+        $job = Job::findOrFail($id);
+        return new JobResource($job);
     }
 
-    public function destroy(Job $job)
+    public function update(Request $request, $id)
     {
-        $job->delete();
-        return response()->json([
-            'message' => 'Succes'
-        ]);
+        $job = Job::findOrFail($id);
+        $job->tra_descripcion = $request->tra_descripcion;
+
+        if ($job->save()) {
+            return new JobResource($job);
+        }
+    }
+
+    public function destroy($id)
+    {
+        $job = Job::findOrFail($id);
+
+        if ($job->delete()) {
+            return new JobResource($job);
+        }
     }
 }

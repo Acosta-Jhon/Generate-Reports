@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateAnswersTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('answers', function (Blueprint $table) {
@@ -44,21 +39,8 @@ class CreateAnswersTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('answers');
     }
 }
-/**
- *Trabajaremos con 10 roles
- *tendremos 50 usuarios
- *haremos 100 preguntas
- *tendremos 20 trabajos
- *estaremos en 15 ciudades
- *tendremos 100 direcciones
- */

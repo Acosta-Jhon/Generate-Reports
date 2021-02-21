@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\RoleResource;
 use App\Models\Role;
 use Illuminate\Http\Request;
 
@@ -10,26 +11,42 @@ class RoleController extends Controller
 {
     public function index()
     {
-        return Role::latest()->paginate();
+        $role = Role::paginate(10);
+        return RoleResource::collection($role);
     }
 
     public function store(Request $request)
     {
-        $role = Role::create($request->all());
+        $role = new Role();
+        $role->rol_descripcion = $request->rol_descripcion;
 
-        return response()->json($role, 201);
+        if ($role->save()) {
+            return new RoleResource($role);
+        }
     }
 
-    public function show(Role $role)
+    public function show($id)
     {
-        return $role;
+        $role = Role::findOrFail($id);
+        return new RoleResource($role);
     }
 
-    public function destroy(Role $role)
+    public function update(Request $request, $id)
     {
-        $role->delete();
-        return response()->json([
-            'message' => 'Succes'
-        ]);
+        $role = Role::findOrFail($id);
+        $role->rol_descripcion = $request->rol_descripcion;
+
+        if ($role->save()) {
+            return new RoleResource($role);
+        }
+    }
+
+    public function destroy($id)
+    {
+        $role = Role::findOrFail($id);
+
+        if ($role->load()) {
+            return new RoleResource($role);
+        }
     }
 }

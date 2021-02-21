@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateUsersTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
@@ -23,6 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('usu_genero')->nullable();
             $table->string('usu_direccion')->nullable();
             $table->string('usu_telefono')->nullable();
+            /*Foreign Key */
             $table->unsignedBigInteger('rol_id');
             $table->foreign('rol_id')->references('id')
             ->on('roles')
@@ -35,11 +31,6 @@ class CreateUsersTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('users');
