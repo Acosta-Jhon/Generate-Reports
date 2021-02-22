@@ -7,8 +7,9 @@ import { ListUsersComponent } from './parameters/users/list-users/list-users.com
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component: HomeComponent },
-    { path: 'list-users', component: ListUsersComponent },
-    { path: 'create-empleado', component: CreateUsersComponent },
+    { path: 'users/list-users', component: ListUsersComponent },
+    { path: 'users/create-user', component: CreateUsersComponent },
+    { path: 'users/edit-user/:id', component: CreateUsersComponent },
     { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 

@@ -1,15 +1,17 @@
 <div class="w-full h-full">
   <div>
-    <h1 class="font-semibold text-center text-2xl mb-3">Listado de Usuarios</h1>
+    <h1 class="font-semibold text-center text-2xl mb-3 font-serif">Listado de Usuarios</h1>
   </div>
   <div class="flex items-center justify-start">
     <button
-      class="m-2 p-2 bg-indigo-400 rounded text-white hover:bg-white hover:text-indigo-500 border-2 border-indigo-400">
+      class="m-2 p-2 bg-indigo-400 rounded text-white hover:bg-white hover:text-indigo-500 border-2 border-indigo-400"
+      routerLink="/users/create-user">
       Agregar
     </button>
   </div>
   <div>
-    <table class="border-collapse w-full">
+    <h1 *ngIf="users.length == 0" class="ml-2 py-5">No hay datos que mostrar</h1>
+    <table class="border-collapse w-full" *ngIf="users.length > 0">
       <thead>
         <tr>
           <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
@@ -19,10 +21,10 @@
             Correo Electrònico
           </th>
           <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
-            Direcciòn
+            Dirección
           </th>
           <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
-            Telèfono
+            Teléfono
           </th>
           <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
             Rol
@@ -64,8 +66,8 @@
           </td>
           <td
             class="w-full lg:w-auto p-3 text-gray-800 border border-b text-center block lg:table-cell relative lg:static">
-            <i class="far fa-edit fa-lg px-2 cursor-pointer text-yellow-500"></i>
-            <i class="far fa-trash-alt fa-lg cursor-pointer text-red-600"></i>
+            <i class="far fa-edit fa-lg px-2 cursor-pointer text-yellow-500" [routerLink]="['/users/edit-user/', user.id]"></i><!--Property Binding-->
+            <i class="far fa-trash-alt fa-lg cursor-pointer text-red-600" (click)="deleteUser(user.id)"></i>
           </td>
         </tr>
       </tbody>

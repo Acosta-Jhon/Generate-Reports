@@ -1,1 +1,86 @@
-<p>create-users works!</p>
+<div class="h-sreen">
+    <form [formGroup]='createUser' (ngSubmit)='insertUpdateUser()' class="p-5">
+        <h1 class="font-semibold text-2xl text-center text-green-400 font-serif">{{tituloForm}}</h1>
+        <div class="flex">
+            <div class="p-5 m-5 w-1/2 rounded">
+                <h1 class="m-2 font-semibold text-xl font-serif">Datos</h1>
+                <div class="flex">
+                    <div class="w-1/2 m-1 text-sm">
+                        <i class="fas fa-signature px-1 text-indigo-400"></i>Nombre
+                        <input type="text" class="rounded w-full shadow-lg border-indigo-400" placeholder="Darkiel" formControlName='usu_nombre' />
+                    </div>
+                    <div class="w-1/2 m-1 text-sm">
+                        <i class="fas fa-signature px-1 text-indigo-400"></i>Apellido
+                        <input type="text" class="rounded w-full shadow-lg border-indigo-400" placeholder="Suarez" formControlName='usu_apellido' />
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="w-1/2 m-1 text-sm">
+                        <i class="fas fa-map-marker-alt px-1 text-indigo-400"></i>Dirección
+                        <input type="text" class="rounded w-full shadow-lg border-indigo-400" placeholder="Centro Històrico" formControlName='usu_direccion' />
+                    </div>
+                    <div class="w-1/2 m-1 text-sm">
+                        <i class="fas fa-mobile-alt px-1 text-indigo-400"></i>Teléfono
+                        <input type="text" class="rounded w-full shadow-lg border-indigo-400" placeholder="0987654321"
+                            formControlName='usu_telefono' />
+                    </div>
+                </div>
+                <div class="flex">
+                    <div class="w-1/2 m-1 text-sm">
+                        <i class="fas fa-venus-mars px-1 text-indigo-400"></i> Género
+                        <select class="rounded w-full shadow-lg border-indigo-400" formControlName='usu_genero'>
+                            <option value="">Seleccionar...</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                        </select>
+                    </div>
+                    <div class="w-1/2 m-1 text-sm">
+                        <i class="fas fa-dice-two px-1 text-indigo-400"></i> Rol
+                        <select class="rounded w-full shadow-lg border-indigo-400" formControlName='rol_id'>
+                            <option value="">Seleccionar...</option>
+                            <option value="2">Empleado</option>
+                            <option value="1">Administrador</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="p-5 m-5 w-1/2 rounded">
+                <h1 class="m-2 font-semibold text-xl font-serif">Credenciales</h1>
+                <div class="m-2 text-sm">
+                    <i class="fas fa-envelope-square px-1 text-indigo-400"></i> Correo electrónico principal
+                    <input type="email" class="rounded w-full shadow-lg border-indigo-400" placeholder="a@gmail.com"
+                        formControlName='usu_email' />
+                </div>
+                <div class="m-2 text-sm">
+                    <i class="fas fa-envelope-square px-1 text-indigo-400"></i> Correo electrónico secundario
+                    <input type="email" class="rounded w-full shadow-lg border-indigo-400" placeholder="b@gmail.com"
+                        formControlName='usu_email_alternativo'>
+                </div>
+                <div class="m-2 text-sm">
+                    <i class="fas fa-key px-1 text-indigo-400"></i><span>Contraseña</span>
+                    <input type="password" class="rounded w-full shadow-lg border-indigo-400" placeholder="**********"
+                        formControlName='usu_contrasena'>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center justify-center h-5">
+            <span class="text-red-500 text-sm" *ngIf="submitted && createUser.invalid">
+                Todos los campos son obligatorios
+            </span>
+        </div>
+        <div class="flex items-center justify-center">
+            <div>
+                <button
+                    class="bg-indigo-400 text-gray-200 p-2 m-2 rounded hover:shadow-2xl hover:text-indigo-400 hover:bg-white border-2 border-indigo-400 font-semibold"
+                    routerLink='/users/list-users'>
+                    <i class="far fa-arrow-alt-circle-left fa-lg"></i> Volver
+                </button>
+            </div>
+            <div>
+                <button class="bg-green-400 p-2 m-2 rounded hover:shadow-2xl border-2 border-green-400 hover:text-green-600 hover:bg-white text-white font-semibold">
+                    Guardar <i class="far fa-save fa-lg"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

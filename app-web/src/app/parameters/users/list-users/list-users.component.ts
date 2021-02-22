@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-list-users',
@@ -8,18 +9,28 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ListUsersComponent implements OnInit {
 
-  users:Array<any> = []
-  private userService:UserService
+  users: Array<any> = []
 
-  constructor(private _userService: UserService) {  
-    this.userService  = _userService
-   }
+  constructor(
+    private _userService: UserService,
+    private toastr:ToastrService
+    ) { }
 
-  getUsers(){
-    this.userService.getUsers().subscribe((res: any) => {
+  getUsers() {
+    this._userService.allUsers().subscribe(res => {
       this.users = res.data
-      console.log(this.users)
-      
+    })
+  }
+
+  deleteUser(id:string){
+    this._userService.supremeUser(id).subscribe(res => {
+      this.toastr.error('Eliminado Exitosamente!','USUARIO',{
+        positionClass:'toast-bottom-left'
+      })
+      this.getUsers()
+    },
+    err => {
+      console.log(err)
     })
   }
 
