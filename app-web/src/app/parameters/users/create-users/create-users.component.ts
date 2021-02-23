@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { RoleService } from 'src/app/services/role.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -15,13 +16,15 @@ export class CreateUsersComponent implements OnInit {
   submitted = false;
   id: string | null;
   tituloForm = "Agregar Usuario"
+  roles:Array<any> = [];// Parameter
 
   constructor(
     private _form: FormBuilder, // Validations
     private _userService: UserService, // Service for access at methods get, post, update, delete
     private router: Router, //navigate between routes
     private toastr: ToastrService, //alert
-    private aRoute: ActivatedRoute
+    private aRoute: ActivatedRoute,
+    private _roleService:RoleService,
   ) {
     this.createUser = this._form.group({
       usu_nombre: ['', Validators.required],
@@ -34,7 +37,6 @@ export class CreateUsersComponent implements OnInit {
       usu_telefono: ['', Validators.required],
       rol_id: ['', Validators.required]
     });
-
     this.id = this.aRoute.snapshot.paramMap.get('id')
   }
 
@@ -118,9 +120,18 @@ export class CreateUsersComponent implements OnInit {
     }
   }
 
-
+  //Dinamic Parameter
+  getRoles(){
+    this._roleService.allRoles().subscribe( res => {
+      this.roles = res.data
+    },
+    err => {
+      console.log(err);
+    })
+  }
   ngOnInit(): void {
     this.getOnlyUser()
+    this.getRoles()
   }
 
 }

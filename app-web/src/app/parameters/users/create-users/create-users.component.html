@@ -35,11 +35,10 @@
                         </select>
                     </div>
                     <div class="w-1/2 m-1 text-sm">
-                        <i class="fas fa-dice-two px-1 text-indigo-400"></i> Rol
+                        <i class="fas fa-dice-two px-1 text-indigo-400"></i> Role
                         <select class="rounded w-full shadow-lg border-indigo-400" formControlName='rol_id'>
-                            <option value="">Seleccionar...</option>
-                            <option value="2">Empleado</option>
-                            <option value="1">Administrador</option>
+                            <option value="" >Selecionar...</option>
+                            <option value={{role.id}} *ngFor="let role of roles">{{role.rol_descripcion}}</option>
                         </select>
                     </div>
                 </div>

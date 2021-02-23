@@ -17,10 +17,10 @@ Route::put('/user/{id}',[UserController::class , 'update']);
 Route::delete('/user/{id}', [UserController::class , 'destroy']);
 
 Route::get("/roles",[RoleController::class , 'index']);
-Route::post('/rol', [RoleController::class , 'store']);
-Route::get('/rol/{id}', [RoleController::class , 'show']);
-Route::put('/rol/{id}',[RoleController::class , 'update']);
-Route::delete('/rol/{id}', [RoleController::class , 'destroy']);
+Route::post('/role', [RoleController::class , 'store']);
+Route::get('/role/{id}', [RoleController::class , 'show']);
+Route::put('/role/{id}',[RoleController::class , 'update']);
+Route::delete('/role/{id}', [RoleController::class , 'destroy']);
 
 Route::get('/questions', [QuestionController::class, 'index']);
 Route::post('/question', [QuestionController::class, 'store']);

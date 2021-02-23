@@ -23,7 +23,7 @@ class CreateAnswersTable extends Migration
             $table->timestamps();
             /* relacion a la tabla usurio */
             $table->foreign('usuario_id')->references('id')
-                ->on('users')->onUpdate('cascade')->onDelete('cascade');
+                ->on('users'); //->onUpdate('cascade')->onDelete('cascade');
             /* relacion a la tabla preguntas */
             $table->foreign('preguntas_id')->references('id')
                 ->on('questions')->onUpdate('cascade')->onDelete('cascade');

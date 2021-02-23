@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ListUsersComponent } from './parameters/users/list-users/list-users.component';
 import { CreateUsersComponent } from './parameters/users/create-users/create-users.component';
+import { CreateRolesComponent } from './parameters/roles/create-roles/create-roles.component';
+import { ListRolesComponent } from './parameters/roles/list-roles/list-roles.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { CreateUsersComponent } from './parameters/users/create-users/create-use
     AppComponent,
     HomeComponent,
     ListUsersComponent,
-    CreateUsersComponent
+    CreateUsersComponent,
+    CreateRolesComponent,
+    ListRolesComponent
   ],
   imports: [
     BrowserModule,

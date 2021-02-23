@@ -30,7 +30,9 @@ export class ListUsersComponent implements OnInit {
       this.getUsers()
     },
     err => {
-      console.log(err)
+      this.toastr.warning('Consta en otro registro!','USUARIO',{
+        positionClass:'toast-bottom-left'
+      })
     })
   }
 

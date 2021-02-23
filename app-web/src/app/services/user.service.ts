@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  _API = 'http://127.0.0.1:8000/api'
+  _API = environment.urlAPI;
 
   constructor(private http: HttpClient) { }
 
@@ -33,6 +34,16 @@ export class UserService {
 
   modifyUser(id: string, data: any) {
     return this.http.put(`${this._API}/user/${id}`, data)
+  }
+
+  //Dinamic Parameter
+  
+  allRoles(): Observable<any> {
+    let header = new HttpHeaders()
+      .set('Type-content', 'application/json')
+    return this.http.get(`${this._API}/roles`, {
+      headers: header
+    })
   }
 
 }
