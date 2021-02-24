@@ -1,0 +1,49 @@
+<div class="w-full h-full">
+    <div>
+      <h1 class="font-semibold text-center text-2xl mb-3 font-serif">{{title}}</h1>
+    </div>
+    <div class="flex items-center justify-start">
+      <button
+        class="m-2 p-2 bg-indigo-400 rounded text-white hover:bg-white hover:text-indigo-500 border-2 border-indigo-400"
+        routerLink="/addresses/create-address">
+        Agregar
+      </button>
+    </div>
+    <div>
+      <h1 *ngIf="addresses.length == 0" class="ml-2 py-5">No hay datos que mostrar</h1>
+      <table class="border-collapse w-full" *ngIf="addresses.length > 0">
+        <thead>
+          <tr>
+            <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+              Calle primaria
+            </th>
+            <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+              Calle Secundaria
+              </th>
+            <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">
+              Acciones
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0"
+            *ngFor="let addresses of addresses">
+            <td
+              class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+              {{addresses.direc_calle_principal}}
+            </td>
+            <td
+            class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+            {{addresses.direc_calle_secundaria}}
+          </td>
+            <td
+              class="w-full lg:w-auto p-3 text-gray-800 border border-b text-center block lg:table-cell relative lg:static">
+              <i class="far fa-edit fa-lg px-2 cursor-pointer text-yellow-500" [routerLink]="['/addresses/edit-address/', addresses.id]"></i><!--Property Binding-->
+              <i class="far fa-trash-alt fa-lg cursor-pointer text-red-600" (click)="deleteAddresses(addresses.id)"></i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

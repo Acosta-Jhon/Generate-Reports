@@ -6,6 +6,12 @@ import { CreateRolesComponent } from './parameters/roles/create-roles/create-rol
 import { ListRolesComponent } from './parameters/roles/list-roles/list-roles.component';
 import { CreateUsersComponent } from './parameters/users/create-users/create-users.component';
 import { ListUsersComponent } from './parameters/users/list-users/list-users.component';
+import { CreateAdressesComponent } from './parameters/addresses/create-addresses/create-addresses.component';
+import { ListAddressesComponent } from './parameters/addresses/list-addresses/list-addresses.component';
+
+
+
+
 
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,6 +24,10 @@ const routes: Routes = [
     { path: 'roles/list-roles', component: ListRolesComponent },
     { path: 'roles/create-role', component: CreateRolesComponent },
     { path: 'roles/edit-role/:id', component: CreateRolesComponent },
+    //addresses
+    { path: 'addresses/list-addresses', component: ListAddressesComponent },
+    { path: 'addresses/create-address', component: CreateAdressesComponent },
+    { path: 'addresses/edit-address/:id', component: CreateAdressesComponent },
 
     { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];

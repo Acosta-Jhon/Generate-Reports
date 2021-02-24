@@ -14,6 +14,9 @@ import { ListUsersComponent } from './parameters/users/list-users/list-users.com
 import { CreateUsersComponent } from './parameters/users/create-users/create-users.component';
 import { CreateRolesComponent } from './parameters/roles/create-roles/create-roles.component';
 import { ListRolesComponent } from './parameters/roles/list-roles/list-roles.component';
+import { ListAddressesComponent } from './parameters/addresses/list-addresses/list-addresses.component';
+import { CreateAdressesComponent } from './parameters/addresses/create-addresses/create-addresses.component';
+
 
 
 @NgModule({
@@ -23,7 +26,10 @@ import { ListRolesComponent } from './parameters/roles/list-roles/list-roles.com
     ListUsersComponent,
     CreateUsersComponent,
     CreateRolesComponent,
-    ListRolesComponent
+    ListRolesComponent,
+    ListAddressesComponent,
+    CreateAdressesComponent
+  
   ],
   imports: [
     BrowserModule,
