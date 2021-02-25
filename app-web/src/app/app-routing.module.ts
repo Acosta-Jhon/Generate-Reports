@@ -8,6 +8,10 @@ import { CreateUsersComponent } from './parameters/users/create-users/create-use
 import { ListUsersComponent } from './parameters/users/list-users/list-users.component';
 import { CreateAdressesComponent } from './parameters/addresses/create-addresses/create-addresses.component';
 import { ListAddressesComponent } from './parameters/addresses/list-addresses/list-addresses.component';
+import { CreateCitiesComponent } from './parameters/cities/create-cities/create-cities.component';
+import { ListCitiesComponent } from './parameters/cities/list-cities/list-cities.component';
+
+
 
 
 
@@ -28,6 +32,12 @@ const routes: Routes = [
     { path: 'addresses/list-addresses', component: ListAddressesComponent },
     { path: 'addresses/create-address', component: CreateAdressesComponent },
     { path: 'addresses/edit-address/:id', component: CreateAdressesComponent },
+
+    //cities
+    { path: 'cities/list-cities', component: ListCitiesComponent },
+    { path: 'cities/create-cities', component: CreateCitiesComponent },
+    { path: 'cities/edit-cities/:id', component: CreateCitiesComponent },
+
 
     { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];

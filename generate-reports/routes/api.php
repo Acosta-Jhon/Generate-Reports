@@ -35,7 +35,7 @@ Route::put('/job/{id}', [JobController::class, 'update']);
 Route::delete('/job/{id}', [JobController::class, 'destroy']);
 
 Route::get('/cities', [CityController::class, 'index']);
-Route::post('/city', [CityController::class, 'store']);
+Route::post('/city ', [CityController::class, 'store']);
 Route::get('/city/{id}', [CityController::class, 'show']);
 Route::put('/city/{id}', [CityController::class, 'update']);
 Route::delete('/city/{id}', [CityController::class, 'destroy']);

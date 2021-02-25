@@ -16,6 +16,8 @@ import { CreateRolesComponent } from './parameters/roles/create-roles/create-rol
 import { ListRolesComponent } from './parameters/roles/list-roles/list-roles.component';
 import { ListAddressesComponent } from './parameters/addresses/list-addresses/list-addresses.component';
 import { CreateAdressesComponent } from './parameters/addresses/create-addresses/create-addresses.component';
+import { CreateCitiesComponent } from './parameters/cities/create-cities/create-cities.component';
+import { ListCitiesComponent } from './parameters/cities/list-cities/list-cities.component';
 
 
 
@@ -28,7 +30,9 @@ import { CreateAdressesComponent } from './parameters/addresses/create-addresses
     CreateRolesComponent,
     ListRolesComponent,
     ListAddressesComponent,
-    CreateAdressesComponent
+    CreateAdressesComponent,
+    CreateCitiesComponent,
+    ListCitiesComponent
   
   ],
   imports: [
