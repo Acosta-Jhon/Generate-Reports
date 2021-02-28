@@ -10,12 +10,8 @@ import { CreateAdressesComponent } from './parameters/addresses/create-addresses
 import { ListAddressesComponent } from './parameters/addresses/list-addresses/list-addresses.component';
 import { CreateCitiesComponent } from './parameters/cities/create-cities/create-cities.component';
 import { ListCitiesComponent } from './parameters/cities/list-cities/list-cities.component';
-
-
-
-
-
-
+import { CreateQuestionsComponent } from './parameters/questions/create-questions/create-questions.component';
+import { ListQuestionsComponent } from './parameters/questions/list-questions/list-questions.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -32,15 +28,17 @@ const routes: Routes = [
     { path: 'addresses/list-addresses', component: ListAddressesComponent },
     { path: 'addresses/create-address', component: CreateAdressesComponent },
     { path: 'addresses/edit-address/:id', component: CreateAdressesComponent },
-
     //cities
     { path: 'cities/list-cities', component: ListCitiesComponent },
     { path: 'cities/create-cities', component: CreateCitiesComponent },
     { path: 'cities/edit-cities/:id', component: CreateCitiesComponent },
+    //Questions
+    { path: 'questions/list-questions', component: ListQuestionsComponent},
+    { path: 'questions/create-questions', component: CreateQuestionsComponent},
+    { path: 'questions/edit-questions/:id', component: CreateQuestionsComponent},
 
-
-    { path: '**', redirectTo: 'home', pathMatch: 'full' },
-];
+    { path: '**', redirectTo: 'home', pathMatch: 'full' }
+]
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],

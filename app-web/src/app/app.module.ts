@@ -18,6 +18,8 @@ import { ListAddressesComponent } from './parameters/addresses/list-addresses/li
 import { CreateAdressesComponent } from './parameters/addresses/create-addresses/create-addresses.component';
 import { CreateCitiesComponent } from './parameters/cities/create-cities/create-cities.component';
 import { ListCitiesComponent } from './parameters/cities/list-cities/list-cities.component';
+import { CreateQuestionsComponent } from './parameters/questions/create-questions/create-questions.component';
+import { ListQuestionsComponent } from './parameters/questions/list-questions/list-questions.component';
 
 
 
@@ -32,7 +34,9 @@ import { ListCitiesComponent } from './parameters/cities/list-cities/list-cities
     ListAddressesComponent,
     CreateAdressesComponent,
     CreateCitiesComponent,
-    ListCitiesComponent
+    ListCitiesComponent,
+    CreateQuestionsComponent,
+    ListQuestionsComponent
   
   ],
   imports: [
