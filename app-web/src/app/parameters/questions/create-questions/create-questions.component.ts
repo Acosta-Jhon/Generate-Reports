@@ -1,16 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { QuestionsService } from 'src/app/services/questions.service';
-=======
->>>>>>> 3e947f609175f056ef4a8dcaca06588d1a486d9e
 
 @Component({
   selector: 'app-create-questions',
   templateUrl: './create-questions.component.html',
-<<<<<<< HEAD
   styleUrls: ['./create-questions.component.scss'],
 })
 export class CreateQuestionsComponent implements OnInit {
@@ -97,15 +93,4 @@ export class CreateQuestionsComponent implements OnInit {
   ngOnInit(): void {
     this.getOneQuestion();
   }
-=======
-  styleUrls: ['./create-questions.component.scss']
-})
-export class CreateQuestionsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
->>>>>>> 3e947f609175f056ef4a8dcaca06588d1a486d9e
 }

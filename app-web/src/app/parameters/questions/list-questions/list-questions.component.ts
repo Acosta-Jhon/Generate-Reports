@@ -1,14 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-<<<<<<< HEAD
 import { QuestionsService } from 'src/app/services/questions.service';
 import { ToastrService } from 'ngx-toastr';
-=======
->>>>>>> 3e947f609175f056ef4a8dcaca06588d1a486d9e
 
 @Component({
   selector: 'app-list-questions',
   templateUrl: './list-questions.component.html',
-<<<<<<< HEAD
   styleUrls: ['./list-questions.component.scss'],
 })
 export class ListQuestionsComponent implements OnInit {
@@ -50,15 +46,4 @@ export class ListQuestionsComponent implements OnInit {
   ngOnInit(): void {
     this.getQuestions();
   }
-=======
-  styleUrls: ['./list-questions.component.scss']
-})
-export class ListQuestionsComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
->>>>>>> 3e947f609175f056ef4a8dcaca06588d1a486d9e
 }

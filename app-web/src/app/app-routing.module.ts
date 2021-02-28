@@ -10,15 +10,10 @@ import { CreateAdressesComponent } from './parameters/addresses/create-addresses
 import { ListAddressesComponent } from './parameters/addresses/list-addresses/list-addresses.component';
 import { CreateCitiesComponent } from './parameters/cities/create-cities/create-cities.component';
 import { ListCitiesComponent } from './parameters/cities/list-cities/list-cities.component';
-<<<<<<< HEAD
-import { CreateQuestionsComponent } from './parameters/questions/create-questions/create-questions.component';
-import { ListQuestionsComponent } from './parameters/questions/list-questions/list-questions.component';
-=======
 import { ListQuestionsComponent } from './parameters/questions/list-questions/list-questions.component';
 import { CreateQuestionsComponent } from './parameters/questions/create-questions/create-questions.component';
 import { ListJobsComponent } from './parameters/jobs/list-jobs/list-jobs.component';
 import { CreateJobsComponent } from './parameters/jobs/create-jobs/create-jobs.component';
->>>>>>> 3e947f609175f056ef4a8dcaca06588d1a486d9e
 
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -39,15 +34,6 @@ const routes: Routes = [
     { path: 'cities/list-cities', component: ListCitiesComponent },
     { path: 'cities/create-cities', component: CreateCitiesComponent },
     { path: 'cities/edit-cities/:id', component: CreateCitiesComponent },
-<<<<<<< HEAD
-    //Questions
-    { path: 'questions/list-questions', component: ListQuestionsComponent},
-    { path: 'questions/create-questions', component: CreateQuestionsComponent},
-    { path: 'questions/edit-questions/:id', component: CreateQuestionsComponent},
-
-    { path: '**', redirectTo: 'home', pathMatch: 'full' }
-]
-=======
     //jobs
     { path: 'jobs/list-jobs', component: ListJobsComponent },
     { path: 'jobs/create-job', component: CreateJobsComponent },
@@ -55,11 +41,10 @@ const routes: Routes = [
     //questions
     { path: 'questions/list-questions', component: ListQuestionsComponent },
     { path: 'questions/create-question', component: CreateQuestionsComponent },
-    { path: 'questions/edit-question/:id', component: CreateQuestionsComponent },
+    { path: 'questions/edit-questions/:id', component: CreateQuestionsComponent },
 
     { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
->>>>>>> 3e947f609175f056ef4a8dcaca06588d1a486d9e
 
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
