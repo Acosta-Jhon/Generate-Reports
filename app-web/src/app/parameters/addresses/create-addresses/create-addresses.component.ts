@@ -14,7 +14,7 @@ export class CreateAdressesComponent implements OnInit {
   createAddresses: FormGroup;
   submitted = false;
   id: string | null;
-  title: string = 'Agregar addresses'
+  title: string = 'Agregar Direccióne'
 
   constructor(
     private _form: FormBuilder,
@@ -49,7 +49,7 @@ export class CreateAdressesComponent implements OnInit {
       direc_calle_secundaria: this.createAddresses.value.direc_calle_secundaria,
     }
     this._addressesService.addAddresses(addresses).subscribe(res => {
-      this.toastr.success('Registrado Exitosamente!', 'ADDRESSES', {
+      this.toastr.success('Registrado Exitosamente!', 'Dirección', {
         positionClass: 'toast-bottom-left'
       });
       this.router.navigate(['addresses/list-addresses'])
@@ -65,7 +65,7 @@ export class CreateAdressesComponent implements OnInit {
       direc_calle_secundaria: this.createAddresses.value.direc_calle_secundaria
     }
     this._addressesService.modifyAddresses(id, addresses).subscribe(res => {
-      this.toastr.info('Actualizado Exitosamente!', 'Addresses', {
+      this.toastr.info('Actualizado Exitosamente!', 'Dirección', {
         positionClass: 'toast-bottom-left'
       })
       this.router.navigate(['addresses/list-addresses'])
@@ -76,7 +76,7 @@ export class CreateAdressesComponent implements OnInit {
   }
 
   getOnlyAddresses(){
-    this.title = 'Actualizar Addresses';
+    this.title = 'Actualizar Dirección';
     if(this.id !== null){ 
     this._addressesService.getOnlyAddresses(this.id).subscribe(data => {
       this.createAddresses.setValue({

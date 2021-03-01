@@ -9,7 +9,7 @@ import { AddressesService } from '../../../services/addresses.service';
 })
 export class ListAddressesComponent implements OnInit {
 
-  title:string = 'Listado de addresses' 
+  title:string = 'Listado de Direcciónes' 
   addresses:Array<any> = [];
 
   constructor(
@@ -28,13 +28,13 @@ export class ListAddressesComponent implements OnInit {
 
   deleteAddresses(id:string){
     this._addressesService.supremeAddresses(id).subscribe(res => {
-      this.toastr.error('Eliminado Exitosamente!','ADDRESSES',{
+      this.toastr.error('Eliminado Exitosamente!','Direcciónes',{
         positionClass:'toast-bottom-left'
       })
       this.getAddresses();
     },
     err => {
-      this.toastr.warning('Consta en otro registro!','ADDRESSES',{
+      this.toastr.warning('Consta en otro registro!','Direcciónes',{
         positionClass:'toast-bottom-left'
       })
     })
