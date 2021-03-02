@@ -1,39 +1,36 @@
-<div class="h-sreen">
-    <form [formGroup]='createAddresses' (ngSubmit)='insertUpdateAddresses()' class="p-5">
-        <h1 class="font-semibold text-2xl text-center text-green-400 font-serif"></h1>
-        <div class="flex">
-            <div class="p-5 m-5 w-1/2 rounded">
-                <h1 class="m-2 font-semibold text-xl font-serif">Datos</h1>
-                <div class="flex">
-                    <div class="w-1/2 m-1 text-sm">
-                        <i class="fas fa-signature px-1 text-indigo-400"></i>Dirrección Calle Principal
-                        <input type="text" class="rounded w-full shadow-lg border-indigo-400" placeholder="Principal" formControlName='direc_calle_principal' />
-                    </div>
-                    <div class="w-1/2 m-1 text-sm">
-                        <i class="fas fa-signature px-1 text-indigo-400"></i>Dirrección Calle Secundaria
-                        <input type="text" class="rounded w-full shadow-lg border-indigo-400" placeholder="Secundaria" formControlName='direc_calle_secundaria' />
-                    </div>
+
+<div class="flex py-32 justify-center h-screen w-full">
+    <form [formGroup]='createAddresses' (ngSubmit)='insertUpdateAddresses()' class="p-3">
+        <h1 class="font-semibold text-2xl text-center mb-5">{{title}}</h1>
+        <div class="w-full items-center justify-center">
+            <div class="m-1 text-sm">
+                <span><i class="fas fa-signature text-indigo-400"></i>Dirrección Calle Principal</span>
+                <input type="text" class="rounded w-full shadow-lg border-indigo-400" placeholder="dirección_calle_Principal"
+                    formControlName='direc_calle_principal' />
+                <span><i class="fas fa-signature text-indigo-400"></i>Dirrección Calle Secundaria</span>
+                <input type="text" class="rounded w-full shadow-lg border-indigo-400" placeholder="dirección_calle_Principal"
+                    formControlName='direc_calle_secundaria' />
+            </div>
+            <div class="flex items-center justify-center px-2">
+                <div>
+                    <button
+                        class="bg-indigo-400 text-gray-200 p-2 m-2 rounded hover:shadow-2xl hover:text-indigo-400 hover:bg-white border-2 border-indigo-400 font-semibold"
+                        routerLink='/addresses/list-addresses'>
+                        <i class="far fa-arrow-alt-circle-left fa-lg"></i> Volver
+                    </button>
+                </div>
+                <div>
+                    <button
+                        class="bg-green-400 p-2 rounded hover:shadow-2xl border-2 border-green-400 hover:text-green-600 hover:bg-white text-white font-semibold">
+                        Guardar <i class="far fa-save fa-lg"></i>
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="flex items-center justify-center h-5">
+        <div class="flex w-full h-5 items-center justify-center mt-3">
             <span class="text-red-500 text-sm" *ngIf="submitted && createAddresses.invalid">
-                Todos los campos son obligatorios
+                Campo obligatorio
             </span>
-        </div>
-        <div class="flex items-center justify-center">
-            <div>
-                <button
-                    class="bg-indigo-400 text-gray-200 p-2 m-2 rounded hover:shadow-2xl hover:text-indigo-400 hover:bg-white border-2 border-indigo-400 font-semibold"
-                    routerLink='/addresses/list-address'>
-                    <i class="far fa-arrow-alt-circle-left fa-lg"></i> Volver
-                </button>
-            </div>
-            <div>
-                <button class="bg-green-400 p-2 m-2 rounded hover:shadow-2xl border-2 border-green-400 hover:text-green-600 hover:bg-white text-white font-semibold">
-                    Guardar <i class="far fa-save fa-lg"></i>
-                </button>
-            </div>
         </div>
     </form>
 </div>
