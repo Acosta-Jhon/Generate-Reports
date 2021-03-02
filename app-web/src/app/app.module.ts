@@ -22,6 +22,8 @@ import { CreateJobsComponent } from './parameters/jobs/create-jobs/create-jobs.c
 import { ListJobsComponent } from './parameters/jobs/list-jobs/list-jobs.component';
 import { CreateQuestionsComponent } from './parameters/questions/create-questions/create-questions.component';
 import { ListQuestionsComponent } from './parameters/questions/list-questions/list-questions.component';
+import { ListAnswersComponent } from './process/answers/list-answers/list-answers.component';
+import { CreateAnswersComponent } from './process/answers/create-answers/create-answers.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { ListQuestionsComponent } from './parameters/questions/list-questions/li
     CreateJobsComponent,
     ListJobsComponent,
     CreateQuestionsComponent,
-    ListQuestionsComponent,  
+    ListQuestionsComponent,
+    ListAnswersComponent,
+    CreateAnswersComponent,  
   ],
   imports: [
     BrowserModule,

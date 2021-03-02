@@ -1,0 +1,25 @@
+<div class="w-full h-full">
+    <div>
+        <h1 class="font-semibold text-center text-2xl mb-3 font-serif">{{title}}</h1>
+    </div>
+    <div class="flex items-center justify-start">
+        <button
+            class="m-2 p-2 bg-indigo-400 rounded text-white hover:bg-white hover:text-indigo-500 border-2 border-indigo-400"
+            routerLink="/answers/create-answer">
+            Agregar
+        </button>
+    </div>
+    <div class="flex items-center justify-center cursor-pointer">
+        <h1 *ngIf="answers.length == 0" class="ml-2 py-5">No hay datos que mostrar</h1>
+        <div class="mx-5" *ngFor='let answer of answers'>
+            <div class="flex">
+                <img src='../../../../assets/pdf.png' alt="Not Found" class='w-24 h-32 hover:shadow-2xl rounded-lg' 
+                [routerLink]="['/answers/edit-answer/', answer.id]"/>
+                <i class="far fa-trash-alt fa-lg cursor-pointer text-red-600" (click)="deleteAnswer(answer.id)"></i>
+            </div>
+            <span *ngFor='let user of users' class="flex items-center justify-center">
+                <p *ngIf='user.id === answer.usuario_id' class="text-xs font-sans">{{user.usu_nombre}}</p>
+            </span>
+        </div>
+    </div>
+</div>

@@ -14,6 +14,8 @@ import { ListQuestionsComponent } from './parameters/questions/list-questions/li
 import { CreateQuestionsComponent } from './parameters/questions/create-questions/create-questions.component';
 import { ListJobsComponent } from './parameters/jobs/list-jobs/list-jobs.component';
 import { CreateJobsComponent } from './parameters/jobs/create-jobs/create-jobs.component';
+import { ListAnswersComponent } from './process/answers/list-answers/list-answers.component';
+import { CreateAnswersComponent } from './process/answers/create-answers/create-answers.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -42,6 +44,10 @@ const routes: Routes = [
     { path: 'questions/list-questions', component: ListQuestionsComponent },
     { path: 'questions/create-question', component: CreateQuestionsComponent },
     { path: 'questions/edit-questions/:id', component: CreateQuestionsComponent },
+    //answers
+    { path: 'answers/list-answers', component: ListAnswersComponent },
+    { path: 'answers/create-answer', component: CreateAnswersComponent },
+    { path: 'answers/edit-answer/:id', component: CreateAnswersComponent },
 
     { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
