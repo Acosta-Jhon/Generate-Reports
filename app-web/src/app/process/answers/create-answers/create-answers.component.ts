@@ -155,10 +155,7 @@ export class CreateAnswersComponent implements OnInit {
       })
     }
   }
-  //Generate PDF
-  generatePdf() {
 
-  }
   //Parameters
   getUsers() {
     this._userService.allUsers().subscribe(res => {
