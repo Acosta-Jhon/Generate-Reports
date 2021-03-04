@@ -8,6 +8,8 @@ import { CitiesService } from 'src/app/services/cities.service';
 import { JobService } from 'src/app/services/job.service';
 import { QuestionsService } from 'src/app/services/questions.service';
 import { UserService } from 'src/app/services/user.service';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-create-answers',
@@ -50,6 +52,26 @@ export class CreateAnswersComponent implements OnInit {
       direccion_id: ['', Validators.required]
     });
     this.id = this.aRoute.snapshot.paramMap.get('id')
+  }
+
+  public openPDF(): void {
+    this.submitted = true
+    let DATA = document.getElementById('report');
+    if (!DATA) {
+      throw new Error("The element #portal wasn't found");
+    }
+    html2canvas(DATA).then(canvas => {
+
+      let fileWidth = 208;
+      let fileHeight = canvas.height * fileWidth / canvas.width;
+
+      const FILEURI = canvas.toDataURL('image/png')
+      let PDF = new jsPDF('p', 'mm', 'a4');
+      let position = 0;
+      PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight)
+
+      PDF.save('angular-demo.pdf');
+    });
   }
 
   insertUpdateAnswer() {
@@ -132,6 +154,10 @@ export class CreateAnswersComponent implements OnInit {
         });
       })
     }
+  }
+  //Generate PDF
+  generatePdf() {
+
   }
   //Parameters
   getUsers() {
