@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,14 +10,14 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'app-web';
-  user: any = {
-    id: 0,
-  };
+  user: any;
+  location: any = this._location.path()
 
   constructor(
-    private router: Router,
-    private _athentication: AuthenticationService
-  ) {}
+    private _athentication: AuthenticationService,
+    private _location: Location,
+    private router: Router
+  ) { }
 
   updateUser() {
     if (this._athentication.user == undefined) {
@@ -27,7 +28,8 @@ export class AppComponent {
   }
 
   logOut() {
-    this._athentication.logOut();
-    this.router.navigate(['answers/home']);
+    this.router.navigate(['/home']);
+    this.user = undefined;
+    this.location = this._location.path()
   }
 }

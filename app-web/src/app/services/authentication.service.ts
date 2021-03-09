@@ -56,8 +56,4 @@ export class AuthenticationService {
       }
     });
   }
-
-  logOut() {
-    this.user = undefined;
-  }
 }

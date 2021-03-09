@@ -44,7 +44,7 @@ import { LoginComponent } from './components/login/login.component';
     ListQuestionsComponent,
     ListAnswersComponent,
     CreateAnswersComponent,
-    LoginComponent,  
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,9 +52,9 @@ import { LoginComponent } from './components/login/login.component';
     HttpClientModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
