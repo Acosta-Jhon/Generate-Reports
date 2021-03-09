@@ -24,6 +24,7 @@ import { CreateQuestionsComponent } from './parameters/questions/create-question
 import { ListQuestionsComponent } from './parameters/questions/list-questions/list-questions.component';
 import { ListAnswersComponent } from './process/answers/list-answers/list-answers.component';
 import { CreateAnswersComponent } from './process/answers/create-answers/create-answers.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { CreateAnswersComponent } from './process/answers/create-answers/create-
     CreateQuestionsComponent,
     ListQuestionsComponent,
     ListAnswersComponent,
-    CreateAnswersComponent,  
+    CreateAnswersComponent,
+    LoginComponent,  
   ],
   imports: [
     BrowserModule,

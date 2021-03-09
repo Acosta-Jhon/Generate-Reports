@@ -1,80 +1,89 @@
 <div class="flex h-full static">
-  <div class="w-1/6 bg-gray-500 h-screen">
-    <div class="flex items-center justify-center">
-      <div class="w-full">
-        <div class="flex items-center bg-indigo-400 w-full h-14 p-2">
-          <div class="flex w-1/2 justify-start">
-            <h1 class="text-white uppercase font-bold">MENU</h1>
-          </div>
-          <div class="flex w-1/2 justify-end text-white">
-            <i class="fas fa-minus-square fa-lg mr-2"></i>
-          </div>
+    <div class="w-1/6 bg-gray-500 h-screen" *ngIf="user.id !== 0">
+        <div class="flex items-center justify-center">
+            <div class="w-full">
+                <div class="flex items-center bg-indigo-400 w-full h-14 p-2">
+                    <div class="flex w-1/2 justify-start">
+                        <h1 class="text-white uppercase font-bold">MENU</h1>
+                    </div>
+                    <div class="flex w-1/2 justify-end text-white">
+                        <i class="fas fa-minus-square fa-lg mr-2"></i>
+                    </div>
+                </div>
+                <div>
+                    <div class="p-2 cursor-pointer" routerLink='/home'>
+                        <p class="font-semibold border-gray-400 ml-5 text-indigo-400">
+                            <i class="fas fa-home fa-lg mr-2"></i> INICIO
+                        </p>
+                    </div>
+                    <div class="p-2  bg-gray-600 text-white border-l-4 border-indigo-400">
+                        <p class="font-semibold ml-3">PROCESOS</p>
+                    </div>
+                    <div class="p-2 border-b-2 hover:bg-white hover:text-indigo-400 cursor-pointer text-gray-300 border-gray-300" routerLink='answers/list-answers'>
+                        <p class="ml-5"><i class="far fa-file-pdf fa-lg mr-2"></i>Reportes</p>
+                    </div>
+                    <div class="p-2 hover:bg-white hover:text-indigo-400 cursor-pointer text-gray-300" *ngIf="user.rol_id == 1" routerLink='users/list-users'>
+                        <p class="ml-5"><i class="far fa-user fa-lg mr-2"></i>Usuarios</p>
+                    </div>
+                    <div class="p-2 bg-gray-600 text-white border-l-4 border-indigo-400">
+                        <p class="font-semibold border-gray-400 ml-3">PARAMETROS</p>
+                    </div>
+                    <div class="border-b-2 p-2 hover:bg-white hover:text-indigo-400 cursor-pointer border-gray-300 text-gray-300" *ngIf="user.rol_id == 1" routerLink='roles/list-roles'>
+                        <p class="ml-5"><i class="fas fa-address-book fa-lg mr-2"></i>Roles</p>
+                    </div>
+                    <div class="border-b-2 p-2 hover:bg-white hover:text-indigo-400 cursor-pointer border-gray-300 text-gray-300" *ngIf="user.rol_id == 1" routerLink='addresses/list-addresses'>
+                        <p class="ml-5"><i class="fas fa-map-pin fa-lg mr-2"></i>Direcciones</p>
+                    </div>
+                    <div class="border-b-2 p-2 hover:bg-white hover:text-indigo-400 cursor-pointer border-gray-300 text-gray-300" routerLink='questions/list-questions'>
+                        <p class="ml-5"><i class="fas fa-question-circle fa-lg mr-2"></i>Preguntas</p>
+                    </div>
+                    <div class="border-b-2 p-2 hover:bg-white hover:text-indigo-400 cursor-pointer border-gray-300 text-gray-300" *ngIf="user.rol_id == 1" routerLink='cities/list-cities'>
+                        <p class="ml-5"><i class="fas fa-city fa-lg mr-2"></i>Ciudaes</p>
+                    </div>
+                    <div class="border-b-2 p-2 hover:bg-white hover:text-indigo-400 cursor-pointer border-gray-300 text-gray-300" *ngIf="user.rol_id == 1" routerLink='jobs/list-jobs'>
+                        <p class="ml-5"><i class="fas fa-briefcase fa-lg mr-2"></i>Trabajos</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-          <div class="p-2 cursor-pointer" routerLink='home'>
-            <p class="font-semibold border-gray-400 ml-5 text-indigo-400">
-              <i class="fas fa-home fa-lg mr-2"></i>
-              INICIO
-            </p>
-          </div>
-          <div class="p-2  bg-gray-600 text-white border-l-4 border-indigo-400">
-            <p class="font-semibold ml-3">PROCESOS</p>
-          </div>
-          <div class="p-2 border-b-2 hover:bg-white hover:text-indigo-400 cursor-pointer text-gray-300 border-gray-300"
-            routerLink='answers/list-answers'>
-            <p class="ml-5"><i class="far fa-file-pdf fa-lg mr-2"></i>Reportes</p>
-          </div>
-          <div class="p-2 hover:bg-white hover:text-indigo-400 cursor-pointer text-gray-300"
-            routerLink='users/list-users'>
-            <p class="ml-5"><i class="far fa-user fa-lg mr-2"></i>Usuarios</p>
-          </div>
-          <div class="p-2 bg-gray-600 text-white border-l-4 border-indigo-400">
-            <p class="font-semibold border-gray-400 ml-3">PARAMETROS</p>
-          </div>
-          <div class="border-b-2 p-2 hover:bg-white hover:text-indigo-400 cursor-pointer border-gray-300 text-gray-300"
-            routerLink='roles/list-roles'>
-            <p class="ml-5"><i class="fas fa-address-book fa-lg mr-2"></i>Roles</p>
-          </div>
-          <div class="border-b-2 p-2 hover:bg-white hover:text-indigo-400 cursor-pointer border-gray-300 text-gray-300" 
-            routerLink='addresses/list-addresses'>
-            <p class="ml-5"><i class="fas fa-map-pin fa-lg mr-2"></i>Direcciones</p>
-          </div>
-          <div class="border-b-2 p-2 hover:bg-white hover:text-indigo-400 cursor-pointer border-gray-300 text-gray-300"
-            routerLink='questions/list-questions'>
-            <p class="ml-5"><i class="fas fa-question-circle fa-lg mr-2"></i>Preguntas</p>
-          </div>
-          <div class="border-b-2 p-2 hover:bg-white hover:text-indigo-400 cursor-pointer border-gray-300 text-gray-300"
-            routerLink='cities/list-cities'>
-            <p class="ml-5"><i class="fas fa-city fa-lg mr-2"></i>Ciudaes</p>
-          </div>
-          <div class="border-b-2 p-2 hover:bg-white hover:text-indigo-400 cursor-pointer border-gray-300 text-gray-300"
-            routerLink='jobs/list-jobs'>
-            <p class="ml-5"><i class="fas fa-briefcase fa-lg mr-2"></i>Trabajos</p>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-  <div class="w-5/6">
-    <div class="flex bg-gray-500 h-14  items-center justify-end text-indigo-500">
-      <div class="flex items-center">
-        <ul class="flex flex-wrap w-full items-center">
-          <li class="px-2 text-white">user@gmail.com</li>
-          <li class="px-2">
-            <button class="bg-gray-100 p-2 rounded hover:bg-indigo-400 hover:text-white">
+    <div class="w-5/6" *ngIf="user.id !== 0">
+        <div class="flex bg-gray-500 h-14  items-center justify-end text-indigo-500">
+            <div class="flex items-center">
+                <ul class="flex flex-wrap w-full items-center">
+                    <li class="px-2 text-white">{{user.usu_email}}</li>
+                    <li class="px-2">
+                        <button class="bg-gray-100 p-2 rounded hover:bg-indigo-400 hover:text-white" [routerLink]="['/users/edit-user/', user.id]">
               Cuenta
             </button>
-          </li>
-          <li class="px-2">
-            <button class="bg-gray-100 p-2 rounded hover:bg-indigo-400 hover:text-white hover:border-2 border-gray-100">
+                    </li>
+                    <li class="px-2">
+                        <button class="bg-gray-100 p-2 rounded hover:bg-indigo-400 hover:text-white hover:border-2 border-gray-100" routerLink='/home' (click)="logOut()">
               Cerrar Sesion
             </button>
-          </li>
-        </ul>
-      </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="p-5">
+            <router-outlet></router-outlet>
+        </div>
     </div>
-    <div class="p-5">
-      <router-outlet></router-outlet>
+    <div class="w-full" *ngIf="user.id == 0">
+        <div class="flex bg-gray-500 h-14 items-center justify-end text-indigo-500">
+            <div class="flex items-center">
+                <ul class="flex flex-wrap w-full items-center">
+                    <li class="px-2 text-white">Bienvenido</li>
+                    <li class="px-2">
+                        <button class="bg-gray-100 p-2 rounded hover:bg-indigo-400 hover:text-white hover:border-2 border-gray-100" routerLink='/home'>
+                  Volver
+                </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="p-5">
+            <router-outlet></router-outlet>
+        </div>
     </div>
-  </div>
 </div>

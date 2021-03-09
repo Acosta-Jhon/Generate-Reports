@@ -1,0 +1,31 @@
+<div class="flex justify-center h-screen w-full">
+    <form [formGroup]='validUser' class="p-3" (ngSubmit)='logIn()'>
+        <h1 class="font-semibold text-2xl text-center mb-5">{{title}}</h1>
+        <div class="w-full items-center justify-center">
+            <img src="../../../assets/logo_live_online.png" alt="Login Logo" class="h-28 w-28 ml-56">
+            <div class="m-1 text-sm">
+                <span><i class="fas fa-signature text-indigo-400"></i>Usuario *</span>
+                <input type="email" class="rounded w-full shadow-lg border-indigo-400" formControlName='usu_email' placeholder="example@example.com" />
+                <span><i class="fas fa-signature mt-2 text-indigo-400"></i>Contraseña *</span>
+                <input type="password" class="rounded w-full shadow-lg border-indigo-400" formControlName='usu_contrasena' placeholder="Contraseña" />
+            </div>
+            <div class="flex items-center justify-center px-2">
+                <div>
+                    <button class="bg-indigo-400 text-gray-200 p-2 m-2 rounded hover:shadow-2xl hover:text-indigo-400 hover:bg-white border-2 border-indigo-400 font-semibold" routerLink='/home'>
+                        <i class="far fa-arrow-alt-circle-left fa-lg"></i> Volver
+                    </button>
+                </div>
+                <div>
+                    <button class="bg-green-400 p-2 rounded hover:shadow-2xl border-2 border-green-400 hover:text-green-600 hover:bg-white text-white font-semibold">
+                        Entrar <i class="far fa-save fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="flex w-full h-5 items-center justify-center mt-3" *ngIf="submitted && validUser.invalid">
+            <span class="text-red-500 text-sm">
+                * Campo obligatorio
+            </span>
+        </div>
+    </form>
+</div>

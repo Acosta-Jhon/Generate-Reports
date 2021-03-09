@@ -16,40 +16,43 @@ import { ListJobsComponent } from './parameters/jobs/list-jobs/list-jobs.compone
 import { CreateJobsComponent } from './parameters/jobs/create-jobs/create-jobs.component';
 import { ListAnswersComponent } from './process/answers/list-answers/list-answers.component';
 import { CreateAnswersComponent } from './process/answers/create-answers/create-answers.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
-    { path: 'home', component: HomeComponent },
-    //Users
-    { path: 'users/list-users', component: ListUsersComponent },
-    { path: 'users/create-user', component: CreateUsersComponent },
-    { path: 'users/edit-user/:id', component: CreateUsersComponent },
-    //Roles
-    { path: 'roles/list-roles', component: ListRolesComponent },
-    { path: 'roles/create-role', component: CreateRolesComponent },
-    { path: 'roles/edit-role/:id', component: CreateRolesComponent },
-    //addresses
-    { path: 'addresses/list-addresses', component: ListAddressesComponent },
-    { path: 'addresses/create-address', component: CreateAdressesComponent },
-    { path: 'addresses/edit-address/:id', component: CreateAdressesComponent },
-    //cities
-    { path: 'cities/list-cities', component: ListCitiesComponent },
-    { path: 'cities/create-cities', component: CreateCitiesComponent },
-    { path: 'cities/edit-cities/:id', component: CreateCitiesComponent },
-    //jobs
-    { path: 'jobs/list-jobs', component: ListJobsComponent },
-    { path: 'jobs/create-job', component: CreateJobsComponent },
-    { path: 'jobs/edit-job/:id', component: CreateJobsComponent },
-    //questions
-    { path: 'questions/list-questions', component: ListQuestionsComponent },
-    { path: 'questions/create-question', component: CreateQuestionsComponent },
-    { path: 'questions/edit-questions/:id', component: CreateQuestionsComponent },
-    //answers
-    { path: 'answers/list-answers', component: ListAnswersComponent },
-    { path: 'answers/create-answer', component: CreateAnswersComponent },
-    { path: 'answers/edit-answer/:id', component: CreateAnswersComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  //Users
+  { path: 'users/list-users', component: ListUsersComponent },
+  { path: 'users/create-user', component: CreateUsersComponent },
+  { path: 'users/edit-user/:id', component: CreateUsersComponent },
+  //Roles
+  { path: 'roles/list-roles', component: ListRolesComponent },
+  { path: 'roles/create-role', component: CreateRolesComponent },
+  { path: 'roles/edit-role/:id', component: CreateRolesComponent },
+  //addresses
+  { path: 'addresses/list-addresses', component: ListAddressesComponent },
+  { path: 'addresses/create-address', component: CreateAdressesComponent },
+  { path: 'addresses/edit-address/:id', component: CreateAdressesComponent },
+  //cities
+  { path: 'cities/list-cities', component: ListCitiesComponent },
+  { path: 'cities/create-cities', component: CreateCitiesComponent },
+  { path: 'cities/edit-cities/:id', component: CreateCitiesComponent },
+  //jobs
+  { path: 'jobs/list-jobs', component: ListJobsComponent },
+  { path: 'jobs/create-job', component: CreateJobsComponent },
+  { path: 'jobs/edit-job/:id', component: CreateJobsComponent },
+  //questions
+  { path: 'questions/list-questions', component: ListQuestionsComponent },
+  { path: 'questions/create-question', component: CreateQuestionsComponent },
+  { path: 'questions/edit-questions/:id', component: CreateQuestionsComponent },
+  //answers
+  { path: 'answers/list-answers', component: ListAnswersComponent },
+  { path: 'answers/create-answer', component: CreateAnswersComponent },
+  { path: 'answers/edit-answer/:id', component: CreateAnswersComponent },
+  //login
+  { path: 'login', component: LoginComponent },
 
-    { path: '**', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({

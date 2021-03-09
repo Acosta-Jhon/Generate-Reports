@@ -5,39 +5,39 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-list-users',
   templateUrl: './list-users.component.html',
-  styleUrls: ['./list-users.component.scss']
+  styleUrls: ['./list-users.component.scss'],
 })
 export class ListUsersComponent implements OnInit {
-
-  users: Array<any> = []
+  users: Array<any> = [];
 
   constructor(
     private _userService: UserService,
-    private toastr:ToastrService
-    ) { }
+    private toastr: ToastrService
+  ) {}
 
   getUsers() {
-    this._userService.allUsers().subscribe(res => {
-      this.users = res.data
-    })
+    this._userService.allUsers().subscribe((res) => {
+      this.users = res.data;
+    });
   }
 
-  deleteUser(id:string){
-    this._userService.supremeUser(id).subscribe(res => {
-      this.toastr.error('Eliminado Exitosamente!','USUARIO',{
-        positionClass:'toast-bottom-left'
-      })
-      this.getUsers()
-    },
-    err => {
-      this.toastr.warning('Consta en otro registro!','USUARIO',{
-        positionClass:'toast-bottom-left'
-      })
-    })
+  deleteUser(id: string) {
+    this._userService.supremeUser(id).subscribe(
+      (res) => {
+        this.toastr.error('Eliminado Exitosamente!', 'USUARIO', {
+          positionClass: 'toast-bottom-left',
+        });
+        this.getUsers();
+      },
+      (err) => {
+        this.toastr.warning('Consta en otro registro!', 'USUARIO', {
+          positionClass: 'toast-bottom-left',
+        });
+      }
+    );
   }
 
   ngOnInit(): void {
-    this.getUsers()
+    this.getUsers();
   }
-
 }
