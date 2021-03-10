@@ -12,7 +12,8 @@ export class AppComponent {
   title = 'app-web';
   user: any;
   location: any = this._location.path()
-
+  
+  
   constructor(
     private _athentication: AuthenticationService,
     private _location: Location,
