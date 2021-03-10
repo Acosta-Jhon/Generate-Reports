@@ -17,6 +17,7 @@ import { CreateJobsComponent } from './parameters/jobs/create-jobs/create-jobs.c
 import { ListAnswersComponent } from './process/answers/list-answers/list-answers.component';
 import { CreateAnswersComponent } from './process/answers/create-answers/create-answers.component';
 import { LoginComponent } from './components/login/login.component';
+import { HomePrincipalComponent } from './components/home-principal/home-principal.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -51,6 +52,8 @@ const routes: Routes = [
   { path: 'answers/edit-answer/:id', component: CreateAnswersComponent },
   //login
   { path: 'login', component: LoginComponent },
+    //home-principal
+    { path: 'system/home', component: HomePrincipalComponent },
 
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];

@@ -25,6 +25,7 @@ import { ListQuestionsComponent } from './parameters/questions/list-questions/li
 import { ListAnswersComponent } from './process/answers/list-answers/list-answers.component';
 import { CreateAnswersComponent } from './process/answers/create-answers/create-answers.component';
 import { LoginComponent } from './components/login/login.component';
+import { HomePrincipalComponent } from './components/home-principal/home-principal.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { LoginComponent } from './components/login/login.component';
     ListAnswersComponent,
     CreateAnswersComponent,
     LoginComponent,
+    HomePrincipalComponent,
   ],
   imports: [
     BrowserModule,
